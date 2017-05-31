@@ -1,27 +1,3 @@
-# #######################################
-#
-# HAL file for HostMot2 with 3 servos
-#
-# Derived from Ted Hyde's original hm2-servo config
-#
-# Based up work and discussion with Seb & Peter & Jeff
-# GNU license references - insert here. www.linuxcnc.org
-#
-#
-# ########################################
-# Firmware files are in /lib/firmware/hm2/7i43/
-# Must symlink the hostmot2 firmware directory of sanbox to
-# /lib/firmware before running EMC2...
-# sudo ln -s $HOME/emc2-sandbox/src/hal/drivers/mesa-hostmot2/firmware /lib/firmware/hm2
-#
-# See also:
-# <http://www.linuxcnc.org/docs/devel/html/man/man9/hostmot2.9.html#config%20modparam>
-# and http://wiki.linuxcnc.org/cgi-bin/emcinfo.pl?HostMot2
-#
-# #####################################################################
-
-
-# ###################################
 # Core EMC/HAL Loads
 # ###################################
 
@@ -32,9 +8,6 @@ loadrt [KINS]KINEMATICS
 loadrt [EMCMOT]EMCMOT servo_period_nsec=[EMCMOT]SERVO_PERIOD num_joints=[KINS]JOINTS
 
 loadrt ddt names=ddt_j1, ddt_j1v,ddt_j2,ddt_j2v,ddt_j3,ddt_j3v,ddt_j4,ddt_j4v,ddt_j5,ddt_j5v,ddt_j0,ddt_j0v
-
-# We need to mix the wrist position with the hand position
-loadrt sum2 count=2
 
 # ################################################
 # THREADS
@@ -59,9 +32,6 @@ addf ddt_j0v servo_thread
 
 addf motion-command-handler                servo-thread
 addf motion-controller                     servo-thread
-
-addf sum2.0                                servo-thread
-addf sum2.1                                servo-thread
 
 # ######################################################
 # Kinematics configuration
