@@ -7,28 +7,28 @@ loadrt [KINS]KINEMATICS
 # motion controller, get name and thread periods from ini file
 loadrt [EMCMOT]EMCMOT servo_period_nsec=[EMCMOT]SERVO_PERIOD num_joints=[KINS]JOINTS
 
-loadrt ddt names=ddt_j1, ddt_j1v,ddt_j2,ddt_j2v,ddt_j3,ddt_j3v,ddt_j4,ddt_j4v,ddt_j5,ddt_j5v,ddt_j0,ddt_j0v
+loadrt ddt names=ddtj1,ddtj1v,ddtj2,ddtj2v,ddtj3,ddtj3v,ddtj4,ddtj4v,ddtj5,ddtj5v,ddtj0,ddtj0v
 
 # ################################################
 # THREADS
 # ################################################
-addf ddt_j1 servo_thread
-addf ddt_j1v servo_thread
+addf ddtj1 servo-thread
+addf ddtj1v servo-thread
 
-addf ddt_j2 servo_thread
-addf ddt_j2v servo_thread
+addf ddtj2 servo-thread
+addf ddtj2v servo-thread
 
-addf ddt_j3 servo_thread
-addf ddt_j3v servo_thread
+addf ddtj3 servo-thread
+addf ddtj3v servo-thread
 
-addf ddt_j4 servo_thread
-addf ddt_j4v servo_thread
+addf ddtj4 servo-thread
+addf ddtj4v servo-thread
 
-addf ddt_j5 servo_thread
-addf ddt_j5v servo_thread
+addf ddtj5 servo-thread
+addf ddtj5v servo-thread
 
-addf ddt_j0 servo_thread
-addf ddt_j0v servo_thread
+addf ddtj0 servo-thread
+addf ddtj0v servo-thread
 
 addf motion-command-handler                servo-thread
 addf motion-controller                     servo-thread
@@ -86,22 +86,19 @@ setp genserkins.D-5  50.0
 
 # create HAL signals for position commands from motion module
 # loop position commands back to motion module feedback
-net J0pos axis.0.motor-pos-cmd => axis.0.motor-pos-fb ddt_j0.in
-net J1pos axis.1.motor-pos-cmd => axis.1.motor-pos-fb ddt_j1.in
-net J2pos axis.2.motor-pos-cmd => axis.2.motor-pos-fb ddt_j2.in
-net J3pos axis.3.motor-pos-cmd => axis.3.motor-pos-fb ddt_j3.in
-net J4pos axis.4.motor-pos-cmd => axis.4.motor-pos-fb ddt_j4.in
-net J5pos axis.5.motor-pos-cmd => axis.5.motor-pos-fb ddt_j5.in
+net J0pos joint.0.motor-pos-cmd => joint.0.motor-pos-fb ddtj0.in
+net J1pos joint.1.motor-pos-cmd => joint.1.motor-pos-fb ddtj1.in
+net J2pos joint.2.motor-pos-cmd => joint.2.motor-pos-fb ddtj2.in
+net J3pos joint.3.motor-pos-cmd => joint.3.motor-pos-fb ddtj3.in
+net J4pos joint.4.motor-pos-cmd => joint.4.motor-pos-fb ddtj4.in
+net J5pos joint.5.motor-pos-cmd => joint.5.motor-pos-fb ddtj5.in
 
-net J0vel ddt_j0.out ddt_j0v.in
-net J1vel ddt_j1.out ddt_j1v.in
-net J2vel ddt_j2.out ddt_j2v.in
-net J3vel ddt_j3.out ddt_j3v.in
-net J4vel ddt_j4.out ddt_j4v.in
-net J5vel ddt_j5.out ddt_j5v.in
-
-
-
+net J0vel ddtj0.out ddtj0v.in
+net J1vel ddtj1.out ddtj1v.in
+net J2vel ddtj2.out ddtj2v.in
+net J3vel ddtj3.out ddtj3v.in
+net J4vel ddtj4.out ddtj4v.in
+net J5vel ddtj5.out ddtj5v.in
 
 
 # ##################################################
