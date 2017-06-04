@@ -47,18 +47,19 @@ addf motion-controller                     servo-thread
 
 # Angle about common normal (X) from old Z to new Z, 0 for parallel joints
 setp genserkins.ALPHA-0 0
-setp genserkins.ALPHA-1 1.570796326
-setp genserkins.ALPHA-2 0
+setp genserkins.ALPHA-1 0
+setp genserkins.ALPHA-2 1.570796326
 setp genserkins.ALPHA-3 0
-setp genserkins.ALPHA-4 -1.570796326
-setp genserkins.ALPHA-5 1.570796326
+setp genserkins.ALPHA-4 0
+setp genserkins.ALPHA-5 -1.570796326
 
+# NOTE: place the rotary table such that shoulder / elbow bent at 45 deg will put the end effector near the center
 # A or radius (distance from previous Z to new Z along common normal (X))
-setp genserkins.A-0 0
+setp genserkins.A-0 -530.0
 setp genserkins.A-1 0
-setp genserkins.A-2 375.0
+setp genserkins.A-2 0
 setp genserkins.A-3 375.0
-setp genserkins.A-4 0
+setp genserkins.A-4 375.0
 setp genserkins.A-5 0
 
 # Theta (commanded joint position) is applied
@@ -72,12 +73,12 @@ setp genserkins.A-5 0
 # Theta-5   0.0
 
 # Offset along new Z to next common normal (X)
-setp genserkins.D-0 355.0
-setp genserkins.D-1 0
+setp genserkins.D-0 0.0
+setp genserkins.D-1 355.0
 setp genserkins.D-2 0
 setp genserkins.D-3 0
-setp genserkins.D-4 -160.0
-setp genserkins.D-5 0.0
+setp genserkins.D-4 0
+setp genserkins.D-5 -160.0
 
 
 # ######################################################
