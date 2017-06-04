@@ -114,31 +114,6 @@ setp genserkins.D-3 0
 setp genserkins.D-4 160.0
 setp genserkins.D-5  50.0
 
-# Puma-style end-effector: twist -> pivot -> pivot
-## A or radius (distance from previous Z to new Z along common normal (X))
-#setp genserkins.A-0 0
-#setp genserkins.A-1 0
-#setp genserkins.A-2 375.0
-#setp genserkins.A-3 0
-#setp genserkins.A-4 0
-#setp genserkins.A-5 0
-#
-## Angle about common normal (X) from old Z to new Z, 0 for parallel joints
-#setp genserkins.ALPHA-0 0
-#setp genserkins.ALPHA-1 1.570796326
-#setp genserkins.ALPHA-2 0
-#setp genserkins.ALPHA-3 1.570796326
-#setp genserkins.ALPHA-4 -1.570796326
-#setp genserkins.ALPHA-5 1.570796326
-#
-## Offset along new Z to next common normal (X)
-#setp genserkins.D-0 355.0
-#setp genserkins.D-1 0
-#setp genserkins.D-2 0
-#setp genserkins.D-3 375.0
-#setp genserkins.D-4 0
-#setp genserkins.D-5 40.0
-
 
 # ######################################################
 # Axis-of-motion Specific Configs (not the GUI)
