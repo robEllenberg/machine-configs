@@ -50,7 +50,7 @@ setp genserkins.ALPHA-0 0
 setp genserkins.ALPHA-1 1.570796326
 setp genserkins.ALPHA-2 0
 setp genserkins.ALPHA-3 0
-setp genserkins.ALPHA-4 1.570796326
+setp genserkins.ALPHA-4 -1.570796326
 setp genserkins.ALPHA-5 1.570796326
 
 # A or radius (distance from previous Z to new Z along common normal (X))
@@ -76,8 +76,8 @@ setp genserkins.D-0 355.0
 setp genserkins.D-1 0
 setp genserkins.D-2 0
 setp genserkins.D-3 0
-setp genserkins.D-4 160.0
-setp genserkins.D-5  50.0
+setp genserkins.D-4 -160.0
+setp genserkins.D-5 0.0
 
 
 # ######################################################
