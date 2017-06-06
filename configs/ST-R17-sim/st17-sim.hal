@@ -78,7 +78,7 @@ setp genserkins.D-1 355.0
 setp genserkins.D-2 0
 setp genserkins.D-3 0
 setp genserkins.D-4 0
-setp genserkins.D-5 -160.0
+setp genserkins.D-5 0.0
 
 
 # ######################################################
